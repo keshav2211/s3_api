@@ -1,0 +1,12 @@
+---
+
+- name: Create S3 bucket
+  hosts: localhost
+  connection: local
+  tasks:
+    - aws_s3:
+        mode: create
+        bucket: "{{ name }}"
+        region: "{{ region }}"
+        aws_access_key: "{{ access_key }}"
+        aws_secret_key: "{{ secret_key }}"

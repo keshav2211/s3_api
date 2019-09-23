@@ -1,0 +1,13 @@
+---
+
+- name: Put an object in S3 bucket
+  hosts: localhost
+  connection: local
+  tasks:
+    - aws_s3:
+        mode: put
+        bucket: "{{ bucket_name }}"
+        object: "{{ key }}"
+        src: "{{ src }}"
+        aws_access_key: "{{ access_key }}"
+        aws_secret_key: "{{ secret_key }}"

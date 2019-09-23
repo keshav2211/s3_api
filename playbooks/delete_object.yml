@@ -1,0 +1,12 @@
+---
+
+- name: Delete an object from S3 bucket
+  hosts: localhost
+  connection: local
+  tasks:
+    - aws_s3:
+        mode: delobj
+        bucket: "{{ bucket_name }}"
+        object: "{{ key }}"
+        aws_access_key: "{{ access_key }}"
+        aws_secret_key: "{{ secret_key }}"
