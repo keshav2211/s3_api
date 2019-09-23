@@ -1,7 +1,7 @@
 # S3 API
 
 A simple API to create bucket and manage objects in **AWS S3**.
-Utilizes Ansible module [aws_s3]([https://docs.ansible.com/ansible/2.4/aws_s3_module.html](https://docs.ansible.com/ansible/2.4/aws_s3_module.html)) as a client to AWS S3.
+Utilizes Ansible module [aws_s3](https://docs.ansible.com/ansible/2.4/aws_s3_module.html) as a client to AWS S3.
 
 Swagger is used for API UI.
 
@@ -26,11 +26,11 @@ Accepts access_key and secret_key in json body.
 >It is required to pass these keys in all requests.
 
 
-###POST /S3/buckets
+### POST /S3/buckets
 
 Create a bucket in S3 by providing a DNS compliant bucket name and region.
 
-###POST /S3/bucket/{bucket_name}/objects
+### POST /S3/bucket/{bucket_name}/objects
 
 Add object to bucket by providing bucket name, source path of object(file) on API server, object key.
 
@@ -44,7 +44,7 @@ Add object to bucket by providing bucket name, source path of object(file) on AP
   "secret_key": "REDACTED"\
 }
 
-###PUT /S3/bucket/{bucket_name}/object/{key}
+### PUT /S3/bucket/{bucket_name}/object/{key}
 
 Update an existing object by providing bucket name, source path of object(file) on API server, object key.
 
