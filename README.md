@@ -25,6 +25,7 @@ Swagger is used for API UI.
 Accepts access_key and secret_key in json body. 
 >It is required to pass these keys in all requests.
 
+## API ENDPOINTS
 
 ### POST /S3/buckets
 
