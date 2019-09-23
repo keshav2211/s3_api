@@ -9,23 +9,28 @@ Swagger is used for API UI.
 ### Local
 1. Install python3 (preferably use venv)
 2. Clone the repo
-3. pip install -r requirements
-4. python app.py
+3. cd to repo
+4. pip install -r requirements
+5. python app.py
+5. http://127.0.0.1:5000/
 
 ### Docker
-1. Clone the repo 
-2. docker build -t "s3_api" .
-3. docker run -p 5000:5000 s3_api:latest
+1. Clone the repo
+2. cd to repo
+3. docker build -t s3_api .
+4. docker run -p 5000:5000 s3_api:latest
+5. http://127.0.0.1:5000/
 
 ## Authentication
 Accepts access_key and secret_key in json body. 
 >It is required to pass these keys in all requests.
 
-## Create bucket in S3
+
+###POST /S3/buckets
 
 Create a bucket in S3 by providing a DNS compliant bucket name and region.
 
-## Add object to bucket
+###POST /S3/bucket/{bucket_name}/objects
 
 Add object to bucket by providing bucket name, source path of object(file) on API server, object key.
 
@@ -39,10 +44,10 @@ Add object to bucket by providing bucket name, source path of object(file) on AP
   "secret_key": "REDACTED"\
 }
 
-## Update object
+###PUT /S3/bucket/{bucket_name}/object/{key}
 
-Update and existing object by providing bucket name, source path of object(file) on API server, object key.
+Update an existing object by providing bucket name, source path of object(file) on API server, object key.
 
-## Delete object
+### DELETE /S3/bucket/{bucket_name}/object/{key}
 
 Delete an object by providing bucket name and object key.
